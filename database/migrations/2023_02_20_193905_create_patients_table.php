@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('patients', function (Blueprint $table) {
+            // falta numero id passaport / pes / numero dde chip / vacunes / color / foto?
             $table->id();
             $table->date(column: 'date_of_birth');
             $table->string(column: 'name');

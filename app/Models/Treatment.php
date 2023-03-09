@@ -10,7 +10,8 @@ class Treatment extends Model
 {
     use HasFactory;
 
-    public function patient(): BelongsTo{
+    public function patient(): BelongsTo
+    {
         return $this->belongsTo(Patient::class);
     }
 }

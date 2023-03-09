@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Patient extends Model
 {
     use HasFactory;
-    
+
     public function owner(): BelongsTo
     {
         return $this->belongsTo(related: Owner::class);
