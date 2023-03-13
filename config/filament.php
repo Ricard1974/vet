@@ -140,7 +140,7 @@ return [
         'path' => app_path('Filament/Widgets'),
         'register' => [
             Widgets\AccountWidget::class,
-            Widgets\FilamentInfoWidget::class,
+            // Widgets\FilamentInfoWidget::class,
         ],
     ],
 
@@ -238,10 +238,10 @@ return [
         'footer' => [
             'should_show_logo' => false,
         ],
-        'max_content_width' => null,
+        'max_content_width' => 'full',
         'notifications' => [
             'vertical_alignment' => 'top',
-            'alignment' => 'right',
+            'alignment' => 'center',
         ],
         'sidebar' => [
             'is_collapsible_on_desktop' => true,
