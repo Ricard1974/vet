@@ -17,6 +17,8 @@ return new class extends Migration
             $table->date(column: 'date_of_birth');
             $table->string(column: 'name');
             $table->string(column: 'type');
+            $table->string(column: 'weight');
+            $table->string(column: 'chip')->nullable();
             $table->foreignId(column:'owner_id')->constrained(table:'owners')->cascadeOnDelete();
             $table->timestamps();
         });

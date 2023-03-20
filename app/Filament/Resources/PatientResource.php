@@ -25,7 +25,7 @@ class PatientResource extends Resource
 {
     protected static ?string $model = Patient::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-beaker';
 
     public static function form(Form $form): Form
     {
@@ -35,13 +35,21 @@ class PatientResource extends Resource
                     ->label('Nombre de la mascota')
                     ->required()
                     ->maxLength(length: 255),
+                TextInput::make(name: 'weight')
+                    ->label('Peso')
+                    ->required()
+                    ->maxLength(length: 255),
+                TextInput::make(name: 'chip')
+                    ->label('Numero de chip')
+                    ->required()
+                    ->maxLength(length: 255),
                 Select::make(name: 'type')
                     ->label('Tipo')
                     ->options([
-                        'cat' => 'Gato',
+                        'gato' => 'Gato',
                         'dog' => 'Perro',
                         'reptile' => 'Reptil',
-                        'fish' => 'Pez',
+                        'otros' => 'Otros',
                     ])
                     ->required(),
                 DatePicker::make(name: 'date_of_birth')
@@ -56,12 +64,30 @@ class PatientResource extends Resource
                     ->createOptionForm([
                         TextInput::make(name: 'name')
                             ->required()
-                            ->maxLength(length: 255),
+                            ->maxLength(length: 255)
+                            ->label('Nombre'),
+                        TextInput::make(name: 'surname')
+                            ->required()
+                            ->maxLength(length: 255)
+                            ->label('Apellidos'),
                         TextInput::make(name: 'email')
                             ->label('E-Mail')
                             ->email()
                             ->required()
                             ->maxLength(length: 255),
+                        TextInput::make(name: 'adress')
+                            ->required()
+                            ->maxLength(length: 255)->label('Direccion'),
+                        TextInput::make(name: 'pc')
+                            ->required()
+                            ->maxLength(length: 255)->label('Codigo Postal'),
+                        TextInput::make(name: 'city')
+                            ->required()
+                            ->maxLength(length: 255)
+                            ->label('Ciudad'),
+                        TextInput::make(name: 'country')
+                            ->required()
+                            ->maxLength(length: 255)->label('Pais'),
                         TextInput::make(name: 'phone')
                             ->label('Telefono')
                             ->required()
@@ -81,14 +107,15 @@ class PatientResource extends Resource
                 TextColumn::make('type')->label('Tipo'),
                 TextColumn::make('date_of_birth')->label('Fecha Nacimiento'),
                 TextColumn::make('owner.name')->label('Propietario')->searchable(),
+                TextColumn::make('chip')->label('Chip')->searchable(),
             ])
             ->filters([
                 SelectFilter::make(name: 'type')
                     ->options([
-                        'cat' => 'Gato',
-                        'dog' => 'Perro',
-                        'reptile' => 'Reptil',
-                        'fish' => 'Pez',
+                        'gato' => 'Gato',
+                        'perro' => 'Perro',
+                        'reptil' => 'Reptil',
+                        'otro' => 'Otros',
                     ]),
             ])
             ->actions([

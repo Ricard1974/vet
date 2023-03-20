@@ -23,7 +23,7 @@ class TreatmentsRelationManager extends RelationManager
         return $form
             ->schema([
                 Forms\Components\TextInput::make('description')
-                    ->label('Descripcion')
+                    ->label('Descripción')
                     ->required()
                     ->maxLength(255)
                     ->columnSpan('full'),
@@ -43,7 +43,7 @@ class TreatmentsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('description'),
+                Tables\Columns\TextColumn::make('description')->searchable(),
                 Tables\Columns\TextColumn::make('price'),
                 Tables\Columns\TextColumn::make('created_at')->dateTime(),
             ])

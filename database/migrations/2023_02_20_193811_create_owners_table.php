@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('owners', function (Blueprint $table) {
             $table->id();
-            $table->string(column: 'email');
             $table->string(column: 'name');
-            $table->string(column: 'phone');
+            $table->string(column: 'surname');
+            $table->string(column: 'email') -> nullable();
+            $table->string(column: 'adress');
+            $table->string(column: 'pc');
+            $table->string(column: 'city');
+            $table->string(column: 'country');
+            $table->string(column: 'phone') -> nullable();
             $table->timestamps();
         });
     }
