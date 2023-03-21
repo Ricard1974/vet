@@ -28,30 +28,30 @@ class OwnerResource extends Resource
             ->schema([
                 TextInput::make(name: 'name')
                     ->required()
-                    ->maxLength(length: 255)
+                    ->maxLength(length: 20)
                     ->label('Nombre'),
                 TextInput::make(name: 'surname')
                     ->required()
-                    ->maxLength(length: 255)
+                    ->maxLength(length: 20)
                     ->label('Apellidos'),
                 TextInput::make(name: 'email')
                     ->label('E-Mail')
                     ->email()
                     ->required()
-                    ->maxLength(length: 255),
+                    ->maxLength(length: 30),
                 TextInput::make(name: 'adress')
                     ->required()
-                    ->maxLength(length: 255)->label('Direccion'),
+                    ->maxLength(length: 100)->label('Direccion'),
                 TextInput::make(name: 'pc')
                     ->required()
-                    ->maxLength(length: 255)->label('Codigo Postal'),
+                    ->maxLength(length: 6)->label('Codigo Postal'),
                 TextInput::make(name: 'city')
                     ->required()
-                    ->maxLength(length: 255)
+                    ->maxLength(length: 20)
                     ->label('Ciudad'),
                 TextInput::make(name: 'country')
                     ->required()
-                    ->maxLength(length: 255)->label('Pais'),
+                    ->maxLength(length: 20)->label('Pais'),
                 TextInput::make(name: 'phone')
                     ->label('Telefono')
                     ->required()
