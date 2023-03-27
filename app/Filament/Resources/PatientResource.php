@@ -47,10 +47,10 @@ class PatientResource extends Resource
                 Select::make(name: 'type')
                     ->label('Tipo')
                     ->options([
-                        'gato' => 'Gato',
-                        'dog' => 'Perro',
-                        'reptile' => 'Reptil',
-                        'otros' => 'Otros',
+                        'Gato' => 'Gato',
+                        'Perro' => 'Perro',
+                        'Reptil' => 'Reptil',
+                        'Otros' => 'Otros',
                     ])
                     ->required(),
                 DatePicker::make(name: 'date_of_birth')
@@ -113,18 +113,22 @@ class PatientResource extends Resource
             ->filters([
                 SelectFilter::make(name: 'type')
                     ->options([
-                        'gato' => 'Gato',
-                        'perro' => 'Perro',
-                        'reptil' => 'Reptil',
-                        'otro' => 'Otros',
+                        'Gato' => 'Gato',
+                        'Perro' => 'Perro',
+                        'Reptil' => 'Reptil',
+                        'Otros' => 'Otros',
                     ]),
             ])
             ->actions([
+                Tables\Actions\ActionGroup::make([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()->requiresConfirmation(),
+            ]),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
-            ExportBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                ExportBulkAction::make(),
             ]);
     }
 

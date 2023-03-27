@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             // falta numero id passaport / pes / numero dde chip / vacunes / color / foto?
             $table->id();
-            $table->date(column: 'date_of_birth');
+            $table->date(column: 'date_of_birth')->nullable();
             $table->string(column: 'name');
             $table->string(column: 'type');
             $table->string(column: 'weight');

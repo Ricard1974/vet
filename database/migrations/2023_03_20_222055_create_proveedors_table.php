@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('proveedors', function (Blueprint $table) {
             $table->id()->startingValue(8000);
-            $table->string('name')->unique();
+            $table->string('name')->nullable();
             $table->string('cname')->nullable();
             $table->string('image')->nullable();
-            $table->string('phone')->helperText('Incluir prefijo +34');
+            $table->string('phone')->nullable()->helperText('Incluir prefijo +34');
             $table->string('phone2')->nullable();
             $table->string('contract')->nullable();
             $table->string('adress')->nullable();
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('nif')->nullable();
             $table->string('www')->nullable();
             $table->string('mail')->nullable();
-            $table->longText('notes')->nullable();
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
     }

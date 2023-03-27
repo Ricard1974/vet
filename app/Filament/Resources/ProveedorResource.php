@@ -61,7 +61,7 @@ class ProveedorResource extends Resource
                                             ->required()
                                             ->maxLength(length: 14)
                                             ->label('Telefono 1')
-                            ->hint('Incluir prefijo +34'),
+                                            ->hint('Incluir prefijo +34'),
                                         TextInput::make(name: 'phone2')
                                             ->tel()
                                             ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
@@ -72,11 +72,11 @@ class ProveedorResource extends Resource
                                             ->maxLength(length: 100)
                                             ->label('Dirección'),
                                         TextInput::make(name: 'www')
-                        ->placeholder('htpps://www.')
+                                            ->placeholder('htpps://www.')
                                             ->maxLength(length: 30)
                                             ->url()
                                             ->label('Web')
-                            ->hint('Incluir htpps://www.'),
+                                            ->hint('Incluir htpps://www.'),
                                     ])
                                     ->columns(3),
                             ]),
@@ -91,7 +91,7 @@ class ProveedorResource extends Resource
                             ->schema([
                                 Card::make()
                                     ->schema([
-                                        SpatieMediaLibraryFileUpload::make('image')->enableOpen()->label('Imagen (Solo ficheros *.png)'),
+                                        SpatieMediaLibraryFileUpload::make('image')->enableOpen()->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y webm)'),
                                         FileUpload::make('contract')->acceptedFileTypes(['application/pdf'])->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
                                             return (string) str($file->getClientOriginalName())->prepend('doc-');
                                         })->enableOpen()->label('Documento')
@@ -111,32 +111,36 @@ class ProveedorResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->label('Id')->searchable()->sortable(),
-                TextColumn::make('name')->weight('light')->label('Empresa')->searchable()->sortable()->limit(10),
+                // TextColumn::make('id')->label('Id')->searchable()->sortable(),
+                TextColumn::make('name')->weight('light')->label('Empresa')->searchable()->sortable(),
                 TextColumn::make('cname')->label('Nombre Contacto')->searchable()->sortable(),
                 TextColumn::make('phone')->label('Teléfono'),
                 TextColumn::make('phone2')->label('Teléfono 2'),
-                TextColumn::make('adress')->label('Dirección')->limit(10),
+                TextColumn::make('adress')->label('Dirección'),
                 TextColumn::make('cif')->label('CIF')->searchable(),
                 TextColumn::make('nif')->label('NIF')->searchable(),
                 TextColumn::make('www')->label('Web')->limit(10),
                 SpatieMediaLibraryImageColumn::make('image')->label('Logotipo'),
-                TextColumn::make('contract')->label('Documentos')->limit(10),
-                TextColumn::make('created_at')->label('Desde')->since(),
-                
+                //TextColumn::make('contract')->label('Docs')->limit(10),
+                TextColumn::make('created_at')->label('Desde'),
+
             ])
-          
+
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make()->requiresConfirmation(),
+                ]),
+
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
                 ExportBulkAction::make(),
-                
+
 
             ]);
     }
