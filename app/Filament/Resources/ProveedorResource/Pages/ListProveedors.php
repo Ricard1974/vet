@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ProveedorResource\Pages;
 
 use App\Filament\Resources\ProveedorResource;
+use App\Filament\Resources\ProveedorResource\Widgets\ProveedorStatsOverview;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 
@@ -14,6 +15,12 @@ class ListProveedors extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+        ];
+    }
+    protected function getHeaderWidgets(): array
+    {
+        return[
+           ProveedorStatsOverview::class, 
         ];
     }
 }

@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Proveedor extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
-    // protected $fillable =  ['name','image','phone','contract','adress'];
+    
     public function patients(): HasMany
     {
         return $this->hasMany(Proveedor::class);

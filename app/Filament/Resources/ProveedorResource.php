@@ -23,12 +23,21 @@ use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\ProveedorResource\RelationManagers;
+use App\Filament\Resources\ProveedorResource\Widgets\ProveedorStatsOverview;
 
 class ProveedorResource extends Resource
 {
     protected static ?string $model = Proveedor::class;
 
+    protected static ?string $recordTitleAttribute = 'cname';
+
+    protected static ?string $modelLabel = 'proveedor';
+
+    protected static ?string $navigationLabel = 'Proveedores';
+
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+
+    protected static ?string $navigationGroup = 'Oficina';
 
     public static function form(Form $form): Form
     {
@@ -72,11 +81,11 @@ class ProveedorResource extends Resource
                                             ->maxLength(length: 100)
                                             ->label('Dirección'),
                                         TextInput::make(name: 'www')
-                                            ->placeholder('htpps://www.')
+                                            ->placeholder('https://www.')
                                             ->maxLength(length: 30)
                                             ->url()
                                             ->label('Web')
-                                            ->hint('Incluir htpps://www.'),
+                                            ->hint('Incluir https://www.'),
                                     ])
                                     ->columns(3),
                             ]),
@@ -122,7 +131,7 @@ class ProveedorResource extends Resource
                 TextColumn::make('www')->label('Web')->limit(10),
                 SpatieMediaLibraryImageColumn::make('image')->label('Logotipo'),
                 //TextColumn::make('contract')->label('Docs')->limit(10),
-                TextColumn::make('created_at')->label('Desde'),
+                TextColumn::make('created_at')->label('Desde')->sortable(),
 
             ])
 
@@ -151,6 +160,14 @@ class ProveedorResource extends Resource
             //
         ];
     }
+
+    public static function getWidgets(): array
+    {
+        return [
+            ProveedorStatsOverview::class,
+        ];
+    }
+
 
     public static function getPages(): array
     {

@@ -20,7 +20,15 @@ class OwnerResource extends Resource
 {
     protected static ?string $model = Owner::class;
 
+    protected static ?string $recordTitleAttribute = 'name';
+
+    protected static ?string $modelLabel = 'propietario';
+    
+    protected static ?string $navigationLabel = 'Propietarios';
+
     protected static ?string $navigationIcon = 'heroicon-o-identification';
+
+    protected static ?string $navigationGroup = 'Veterinaria';
 
     public static function form(Form $form): Form
     {
