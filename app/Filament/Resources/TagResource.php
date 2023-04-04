@@ -10,18 +10,20 @@ use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Card;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\TagResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TagResource\RelationManagers;
+use PhpParser\Node\Stmt\Label;
 
 class TagResource extends Resource
 {
     protected static ?string $model = Tag::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationGroup = 'Blog';
 
 
@@ -29,10 +31,16 @@ class TagResource extends Resource
     {
         return $form
             ->schema([
-            TextInput::make('name')->reactive()->afterStateUpdated(function (Closure $set, $state) {
-                $set('slug', Str::slug($state));
-            })->required(),
-            TextInput::make('slug')->required()
+
+                Card::make()
+                    ->schema([
+                        TextInput::make('name')->reactive()->afterStateUpdated(function (Closure $set, $state) {
+                            $set('slug', Str::slug($state));
+                        })->required()->label('Nombre'),
+                        TextInput::make('slug')->required()
+                    ])
+                    ->columns(2)
+
             ]);
     }
 
@@ -41,7 +49,7 @@ class TagResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('id')->sortable(),
-                TextColumn::make('name')->limit(50)->sortable(),
+                TextColumn::make('name')->limit(50)->sortable()->label('Nombre'),
                 TextColumn::make('slug')->limit(50)
             ])
             ->filters([

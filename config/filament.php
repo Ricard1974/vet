@@ -1,5 +1,6 @@
 <?php
 
+use App\Filament\Resources\BlogPostResource\Widgets\PostStatsOverview;
 use Filament\Pages;
 use Filament\Widgets;
 use Filament\Widgets\StatsOverviewWidget;
@@ -143,7 +144,8 @@ return [
         'register' => [
             Widgets\AccountWidget::class,
             // Widgets\FilamentInfoWidget::class,
-           ProveedorStatsOverview::class,
+            ProveedorStatsOverview::class,
+            PostStatsOverview::class,
         ],
     ],
 

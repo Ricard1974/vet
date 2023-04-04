@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\BlogPostResource\Widgets\PostStatsOverview;
 use Closure;
 use Filament\Forms;
 use App\Models\Post;
@@ -10,6 +11,7 @@ use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Tables\Columns\TextColumn;
@@ -29,23 +31,34 @@ class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
     protected static ?string $navigationGroup = 'Blog';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Select::make('category_id')
-                    ->relationship('category', 'name'),
-                TextInput::make('title')->reactive()
-                    ->afterStateUpdated(function (Closure $set, $state) {
-                        $set('slug', Str::slug($state));
-                    })->required(),
-                TextInput::make('slug')->required(),
-                RichEditor::make('content'),
-                SpatieMediaLibraryFileUpload::make('image')->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y web)')->collection('post')->enableOpen(),
-                Toggle::make('is_published')
+
+
+                Card::make()
+                    ->schema([
+                        Select::make('category_id')
+                            ->relationship('category', 'name')->label('Categoria'),
+                        TextInput::make('title')->reactive()
+                            ->afterStateUpdated(function (Closure $set, $state) {
+                                $set('slug', Str::slug($state));
+                            })->required()->label('Título'),
+                        TextInput::make('slug')->required(),
+                        SpatieMediaLibraryFileUpload::make('image')->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y web)')->collection('post')->enableOpen(),
+                        RichEditor::make('content')->disableToolbarButtons([
+                            'attachFiles',
+                            'codeBlock',
+                        ])->label('Contenido'),
+                        Toggle::make('is_published')->inline()->label('Está Publicado')
+                    ])
+                    ->columns(2)
+
+
             ]);
     }
 
@@ -53,10 +66,10 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->sortable(),
-                TextColumn::make('title')->limit(50)->sortable(),
+                // TextColumn::make('id')->sortable(),
+                TextColumn::make('title')->limit(50)->sortable()->label('Título'),
                 TextColumn::make('slug')->limit(50),
-                ToggleColumn::make('is_published'),
+                ToggleColumn::make('is_published')->label('Publicado'),
                 SpatieMediaLibraryImageColumn::make('image')->label('Thumbnail')->collection('post'),
             ])
             ->filters([
@@ -74,6 +87,13 @@ class PostResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            PostStatsOverview::class,
         ];
     }
 

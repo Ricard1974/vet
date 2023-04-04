@@ -8,6 +8,7 @@ use App\Models\Owner;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Card;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
@@ -34,7 +35,8 @@ class OwnerResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make(name: 'name')
+            Card::make()
+                ->schema([TextInput::make(name: 'name')
                     ->required()
                     ->maxLength(length: 20)
                     ->label('Nombre'),
@@ -63,7 +65,9 @@ class OwnerResource extends Resource
                 TextInput::make(name: 'phone')
                     ->label('Telefono')
                     ->required()
-                    ->tel(),
+                    ->tel()
+                ])->columns(2)
+              
 
             ]);
     }

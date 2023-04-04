@@ -35,7 +35,7 @@ class ProveedorResource extends Resource
 
     protected static ?string $navigationLabel = 'Proveedores';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-truck';
 
     protected static ?string $navigationGroup = 'Oficina';
 

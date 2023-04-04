@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Card;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
@@ -21,21 +22,24 @@ use App\Filament\Resources\CategoryResource\RelationManagers;
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-bookmark';
     protected static ?string $navigationGroup = 'Blog';
     protected static ?string $modelLabel = 'Categorias';
-
     protected static ?string $navigationLabel = 'Categorias';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-            TextInput::make('name')->reactive()->afterStateUpdated(function (Closure $set, $state) {
-                $set('slug', Str::slug($state));
-            })->required(),
-            TextInput::make('slug')->required()
+
+                Card::make()
+                    ->schema([
+                        TextInput::make('name')->reactive()->afterStateUpdated(function (Closure $set, $state) {
+                            $set('slug', Str::slug($state));
+                        })->required(),
+                        TextInput::make('slug')->required()
+                    ])
+                    ->columns(2)
             ]);
     }
 
@@ -43,10 +47,9 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-
-            TextColumn::make('id')->sortable(),
-            TextColumn::make('name')->limit(50)->sortable(),
-            TextColumn::make('slug')->limit(50)
+                TextColumn::make('id')->sortable(),
+                TextColumn::make('name')->limit(50)->sortable()->label('Nombre'),
+                TextColumn::make('slug')->limit(50)
             ])
             ->filters([
                 //
@@ -58,14 +61,14 @@ class CategoryResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -73,5 +76,5 @@ class CategoryResource extends Resource
             'create' => Pages\CreateCategory::route('/create'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
-    }    
+    }
 }
