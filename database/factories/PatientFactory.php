@@ -23,7 +23,7 @@ class PatientFactory extends Factory
             'type' => $this->faker->randomElement(['Gato', 'Perro', 'Reptil']),
             'weight' => $this->faker->randomFloat(2,1,7),
             'chip' => $this->faker->randomNumber(9, true),
-            'owner_id'=> $this->faker->randomDigit(1,10),
+            'owner_id'=> $this->faker->randomDigit(1,5),
             
         ];
     }

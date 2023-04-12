@@ -32,6 +32,7 @@ class PostResource extends Resource
     protected static ?string $model = Post::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+
     protected static ?string $navigationGroup = 'Blog';
 
     public static function form(Form $form): Form
@@ -54,7 +55,7 @@ class PostResource extends Resource
                             'attachFiles',
                             'codeBlock',
                         ])->label('Contenido'),
-                        Toggle::make('is_published')->inline()->label('Está Publicado')
+                        Toggle::make('is_published')->inline()->label('Está Publicado')->columnSpan('full')
                     ])
                     ->columns(2)
 
@@ -79,7 +80,7 @@ class PostResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
             ]);
     }
 

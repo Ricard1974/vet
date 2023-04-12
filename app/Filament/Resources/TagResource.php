@@ -24,6 +24,7 @@ class TagResource extends Resource
     protected static ?string $model = Tag::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
+
     protected static ?string $navigationGroup = 'Blog';
 
 
@@ -59,7 +60,7 @@ class TagResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
             ]);
     }
 
