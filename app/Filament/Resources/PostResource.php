@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\BlogPostResource\Widgets\PostStatsOverview;
 use Closure;
 use Filament\Forms;
 use App\Models\Post;
@@ -14,6 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
@@ -26,6 +26,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use App\Filament\Resources\PostResource\RelationManagers;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use App\Filament\Resources\BlogPostResource\Widgets\PostStatsOverview;
 
 class PostResource extends Resource
 {
@@ -49,12 +50,12 @@ class PostResource extends Resource
                             ->afterStateUpdated(function (Closure $set, $state) {
                                 $set('slug', Str::slug($state));
                             })->required()->label('Título'),
-                        TextInput::make('slug')->required(),
+                        TextInput::make('slug'),
                         SpatieMediaLibraryFileUpload::make('image')->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y web)')->collection('post')->enableOpen(),
-                        RichEditor::make('content')->disableToolbarButtons([
-                            'attachFiles',
-                            'codeBlock',
-                        ])->label('Contenido'),
+                        Textarea::make('content')
+                        ->label('Contenido')
+                        ->rows(10)
+                        ->cols(20),
                         Toggle::make('is_published')->inline()->label('Está Publicado')->columnSpan('full')
                     ])
                     ->columns(2)
@@ -78,6 +79,7 @@ class PostResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
