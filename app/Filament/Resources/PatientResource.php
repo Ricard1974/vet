@@ -117,11 +117,11 @@ class PatientResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Nombre')->searchable(),
+                TextColumn::make('name')->label('Nombre')->searchable()->sortable(),
                 TextColumn::make('type')->label('Tipo'),
                 TextColumn::make('date_of_birth')->label('Fecha Nacimiento'),
-                TextColumn::make('owner.name')->label('Propietario')->searchable(),
-                TextColumn::make('chip')->label('Chip')->searchable(),
+                TextColumn::make('owner.name')->label('Propietario')->searchable()->sortable(),
+                TextColumn::make('chip')->label('Chip')->searchable()->sortable(),
             ])
             ->filters([
                 SelectFilter::make(name: 'type')

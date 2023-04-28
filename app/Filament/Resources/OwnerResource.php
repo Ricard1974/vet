@@ -76,13 +76,13 @@ class OwnerResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Nombre')->searchable(),
-                TextColumn::make('surname')->label('Apellido')->searchable(),
+                TextColumn::make('name')->label('Nombre')->searchable()->sortable(),
+                TextColumn::make('surname')->label('Apellido')->searchable()->sortable(),
                 TextColumn::make('email')->label('E-mail')->searchable(),
                 TextColumn::make('phone')->label('Telefono'),
                 TextColumn::make('adress')->label('Dirección'),
                 TextColumn::make('city')->label('Ciudad'),
-                TextColumn::make('pc')->label('Código Postal'),
+                TextColumn::make('pc')->label('Código Postal')->sortable(),
             ])
             ->filters([
                 //

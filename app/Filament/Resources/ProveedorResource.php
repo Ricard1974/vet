@@ -100,7 +100,7 @@ class ProveedorResource extends Resource
                             ->schema([
                                 Card::make()
                                     ->schema([
-                                        SpatieMediaLibraryFileUpload::make('image')->enableOpen()->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y webm)'),
+                                        SpatieMediaLibraryFileUpload::make('image')->image()->enableOpen()->removeUploadedFileButtonPosition('right')->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y webm)'),
                                         FileUpload::make('contract')->acceptedFileTypes(['application/pdf'])->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
                                             return (string) str($file->getClientOriginalName())->prepend('doc-');
                                         })->enableOpen()->label('Documento')

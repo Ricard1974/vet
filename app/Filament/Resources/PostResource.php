@@ -24,6 +24,7 @@ use Filament\Forms\Components\BelongsToSelect;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\RelationManagers\RelationManager;
 use App\Filament\Resources\PostResource\RelationManagers;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\BlogPostResource\Widgets\PostStatsOverview;
@@ -51,7 +52,7 @@ class PostResource extends Resource
                                 $set('slug', Str::slug($state));
                             })->required()->label('Título'),
                         TextInput::make('slug'),
-                        SpatieMediaLibraryFileUpload::make('image')->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y web)')->collection('post')->enableOpen(),
+                        SpatieMediaLibraryFileUpload::make('image')->image()->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y web)')->removeUploadedFileButtonPosition('right')->collection('post')->enableOpen(),
                         Textarea::make('content')
                         ->label('Contenido')
                         ->rows(10)
@@ -69,10 +70,11 @@ class PostResource extends Resource
         return $table
             ->columns([
                 // TextColumn::make('id')->sortable(),
-                TextColumn::make('title')->limit(50)->sortable()->label('Título'),
+                TextColumn::make('title')->limit(50)->sortable()->label('Título')->searchable(),
                 TextColumn::make('slug')->limit(50),
-                ToggleColumn::make('is_published')->label('Publicado'),
+                ToggleColumn::make('is_published')->label('Publicado')->sortable(),
                 SpatieMediaLibraryImageColumn::make('image')->label('Thumbnail')->collection('post'),
+                TextColumn::make('created_at')->label('Creado')->sortable(),
             ])
             ->filters([
                 //
@@ -83,6 +85,7 @@ class PostResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                ExportBulkAction::make(),
             ]);
     }
 

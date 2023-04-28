@@ -9,7 +9,7 @@
 <div class="dark:bg-gray-800 dark:text-gray-100 rounded-lg">
     <div class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-extrabold sm:text-4xl">All the features you want</h2>
+            <h2 class="text-3xl font-extrabold sm:text-4xl">Aplicación en Laravel</h2>
             <p class="mt-4 text-lg dark:text-gray-400">Pellentesque viverra, leo id euismod laoreet, nunc risus molestie
                 orci, vel faucibus quam justo id mauris.</p>
         </div>
