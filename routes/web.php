@@ -1,12 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontEndController;
-use App\Http\Controllers\ContactFormController;
+
 
 /*
 |--------------------------------------------------------------------------

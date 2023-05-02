@@ -1,9 +1,9 @@
-<body class="bg-gray-800 font-sans leading-normal tracking-normal">
+<body class="bg-gray-800 leading-normal tracking-normal">
 
     <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6 fixed w-full z-10 top-0">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
             <a class="text-white no-underline hover:text-white hover:no-underline" href="/">
-                <span class="text-2xl pl-2"><i class="em em-cat"></i>VET</span>
+                <span class="text-3xl pl-4"><i class="em em-cat"></i> Vet 1.2</span>
             </a>
         </div>
 
@@ -40,4 +40,4 @@
         </div>
     </nav>
 
-    <div class="container mx-auto mt-24  px-4">
+    <div class="container mx-auto mt-24 px-4">

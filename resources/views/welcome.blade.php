@@ -10,8 +10,8 @@
     <div class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl font-extrabold sm:text-4xl">Aplicación en Laravel</h2>
-            <p class="mt-4 text-lg dark:text-gray-400">Pellentesque viverra, leo id euismod laoreet, nunc risus molestie
-                orci, vel faucibus quam justo id mauris.</p>
+            <p class="mt-4 text-lg dark:text-gray-400">Algunas de las tecnologías usadas en este proyectyo personal son las siguientes:
+            </p>
         </div>
         <dl
             class="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
@@ -21,9 +21,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Quisque at urna</dt>
-                    <dd class="mt-2 dark:text-gray-400">Vivamus ultricies bibendum tortor, molestie imperdiet justo
-                        cursus eu. Donec quis arcu magna. Integer tempor egestas dolor.</dd>
+                    <dt class="text-lg font-medium">Laravel</dt>
+                    <dd class="mt-2 dark:text-gray-400">Version 9 de este framework, para acceder al Dashboard usa login: <p> <h6 class="dark:text-violet-400"> guest@guest.com <p>password </h6><p>
+                        No todas las funcionalidades estan disponibles como invitado.
+                    </dd>
                 </div>
             </div>
             <div class="flex">
@@ -32,9 +33,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Quisque eu dui lacinia</dt>
-                    <dd class="mt-2 dark:text-gray-400">Quisque ultricies volutpat sapien nec varius. Sed sit amet justo
-                        vestibulum, efficitur risus quis, gravida libero.</dd>
+                    <dt class="text-lg font-medium">Filaments</dt>
+                    <dd class="mt-2 dark:text-gray-400">Plug in para el Dashboard, formacion de tablas y la creación y edicion de las mismas y el plugin TIMEX</dd>
                 </div>
             </div>
             <div class="flex">
@@ -43,9 +43,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Mauris dignissim</dt>
-                    <dd class="mt-2 dark:text-gray-400">Phasellus nec molestie arcu. Proin dictum, lorem mollis rutrum
-                        efficitur, lectus velit pharetra elit, et dictum purus nibh auctor velit.</dd>
+                    <dt class="text-lg font-medium">Tailwind</dt>
+                    <dd class="mt-2 dark:text-gray-400">Usado en el frontend junsto a los componentes de Mamba UI, tailwindcss/typography y tailwindcss/forms</dd>
                 </div>
             </div>
             <div class="flex">
@@ -54,9 +53,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Proin nulla eros</dt>
-                    <dd class="mt-2 dark:text-gray-400">Sed ornare ultricies gravida. Morbi egestas dolor turpis, ornare
-                        laoreet est vehicula non.</dd>
+                    <dt class="text-lg font-medium">MySQL</dt>
+                    <dd class="mt-2 dark:text-gray-400">La base de datos junto a programas como phpMyAdmin y Database de VS Code</dd>
                 </div>
             </div>
             <div class="flex">
@@ -65,9 +63,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Proin dictum</dt>
-                    <dd class="mt-2 dark:text-gray-400">Lorem mollis rutrum efficitur, lectus velit pharetra elit, et
-                        dictum purus nibh auctor velit.</dd>
+                    <dt class="text-lg font-medium">Spatie laravel-permission</dt>
+                    <dd class="mt-2 dark:text-gray-400">Usado para la creacion de los usuarios, roles y permisos asi como las Políticas de uso.</dd>
                 </div>
             </div>
             <div class="flex">
@@ -76,9 +73,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Quisque eu dui lacinia</dt>
-                    <dd class="mt-2 dark:text-gray-400">Cras a mauris tincidunt, scelerisque justo sit amet, hendrerit
-                        est. Fusce venenatis diam fringilla metus convallis, at dapibus enim congue.</dd>
+                    <dt class="text-lg font-medium">Spatie laravel-media-library-plugin</dt>
+                    <dd class="mt-2 dark:text-gray-400">Uso este codigo para el almanezamiento de las imagenes asi como creacion de colecciones.</dd>
                 </div>
             </div>
             <div class="flex">
@@ -87,9 +83,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Cras vel bibendum tellus</dt>
-                    <dd class="mt-2 dark:text-gray-400">Curabitur molestie neque ac massa pulvinar, nec sollicitudin
-                        nunc consequat. Donec mattis orci eros, vitae porttitor risus pretium eget.</dd>
+                    <dt class="text-lg font-medium">Faker</dt>
+                    <dd class="mt-2 dark:text-gray-400">Relleno de la base de datos, usado junto con Factory y Seeder</dd>
                 </div>
             </div>
             <div class="flex">
@@ -98,9 +93,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <div class="ml-3">
-                    <dt class="text-lg font-medium">Dignissim magna</dt>
-                    <dd class="mt-2 dark:text-gray-400">Cras ac lectus erat. Curabitur condimentum luctus nisi, non
-                        lacinia ipsum.</dd>
+                    <dt class="text-lg font-medium">Otras utilidades usadas en el proyecto</dt>
+                    <dd class="mt-2 dark:text-gray-400">XAMPP, phpmyadmin, Visual Studio Code, Mailtrap, FileZilla, Composer, Node.js,  entre otras.</dd>
                 </div>
             </div>
         </dl>
