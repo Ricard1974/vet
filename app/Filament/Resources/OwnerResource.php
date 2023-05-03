@@ -80,7 +80,7 @@ class OwnerResource extends Resource
                 TextColumn::make('surname')->label('Apellido')->searchable()->sortable(),
                 TextColumn::make('email')->label('E-mail')->searchable(),
                 TextColumn::make('phone')->label('Telefono'),
-                TextColumn::make('adress')->label('Dirección'),
+                TextColumn::make('adress')->label('Dirección')->limit(10),
                 TextColumn::make('city')->label('Ciudad'),
                 TextColumn::make('pc')->label('Código Postal')->sortable(),
             ])
@@ -95,7 +95,7 @@ class OwnerResource extends Resource
             ]),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
                 ExportBulkAction::make(),
             ]);
     }

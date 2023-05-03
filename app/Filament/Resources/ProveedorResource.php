@@ -124,8 +124,8 @@ class ProveedorResource extends Resource
                 TextColumn::make('name')->weight('light')->label('Empresa')->searchable()->sortable(),
                 TextColumn::make('cname')->label('Nombre Contacto')->searchable()->sortable(),
                 TextColumn::make('phone')->label('Teléfono'),
-                TextColumn::make('phone2')->label('Teléfono 2'),
-                TextColumn::make('adress')->label('Dirección'),
+                // TextColumn::make('phone2')->label('Teléfono 2'),
+                TextColumn::make('adress')->label('Dirección')->limit(10),
                 TextColumn::make('cif')->label('CIF')->searchable(),
                 TextColumn::make('nif')->label('NIF')->searchable(),
                 TextColumn::make('www')->label('Web')->limit(10),
@@ -147,7 +147,7 @@ class ProveedorResource extends Resource
 
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
                 ExportBulkAction::make(),
 
 

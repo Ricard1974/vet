@@ -140,7 +140,7 @@ class PatientResource extends Resource
                 ]),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
                 ExportBulkAction::make(),
             ]);
     }

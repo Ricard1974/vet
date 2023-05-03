@@ -44,7 +44,7 @@
                 </svg>
                 <div class="ml-3">
                     <dt class="text-lg font-medium">Tailwind</dt>
-                    <dd class="mt-2 dark:text-gray-400">Usado en el frontend junsto a los componentes de Mamba UI, tailwindcss/typography y tailwindcss/forms</dd>
+                    <dd class="mt-2 dark:text-gray-400">Usado en el frontend junto a los componentes de Mamba UI, tailwindcss/typography y tailwindcss/forms</dd>
                 </div>
             </div>
             <div class="flex">

@@ -13,9 +13,9 @@
 
 
 @foreach ($posts as $post)
-<div>
 
-    <div class="container max-w-4xl px-10 py-6 mx-auto shadow-sm bg-gray-800 mt-2 text-gray-100 border-l-4 dark:border-violet-400">
+
+    <div class=" m-3 container max-w-4xl px-10 py-6 mx-auto shadow-md rounded-md bg-gray-800 mt-2 text-gray-100 border-x-4 dark:border-violet-400">
         <div class="flex items-center justify-between">
             <span class="text-sm dark:text-gray-400">{{ $post->category->name }}</span>
             {{-- <a rel="noopener noreferrer" href="#"
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 @endforeach
 

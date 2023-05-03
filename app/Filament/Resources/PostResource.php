@@ -71,7 +71,7 @@ class PostResource extends Resource
             ->columns([
                 // TextColumn::make('id')->sortable(),
                 TextColumn::make('title')->limit(50)->sortable()->label('Título')->searchable(),
-                TextColumn::make('slug')->limit(50),
+                // TextColumn::make('slug')->limit(50),
                 ToggleColumn::make('is_published')->label('Publicado')->sortable(),
                 SpatieMediaLibraryImageColumn::make('image')->label('Thumbnail')->collection('post'),
                 TextColumn::make('created_at')->label('Creado')->sortable(),
@@ -82,9 +82,10 @@ class PostResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
                 ExportBulkAction::make(),
             ]);
     }

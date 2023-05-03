@@ -37,7 +37,7 @@ class PermissionPolicy
      */
     public function update(User $user): bool
     {
-        return $user->hasRole(['Admin', 'Guest']);
+        return $user->hasRole('Admin');
     }
 
     /**

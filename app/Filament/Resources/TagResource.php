@@ -50,7 +50,7 @@ class TagResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('id')->sortable(),
-                TextColumn::make('name')->limit(50)->sortable()->label('Nombre'),
+                TextColumn::make('name')->limit(50)->searchable()->sortable()->label('Nombre'),
                 TextColumn::make('slug')->limit(50)
             ])
             ->filters([
@@ -58,9 +58,10 @@ class TagResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
             ]);
     }
 
