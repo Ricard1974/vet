@@ -3,34 +3,6 @@
 
 
 
-{{-- <section class="p-6 dark:text-gray-100">
-    <form novalidate=""
-        class="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-gray-900 ng-untouched ng-pristine ng-valid">
-        <h2 class="w-full text-3xl font-bold leading-tight">Contact us</h2>
-        <div>
-            <label for="name" class="block mb-1 ml-1">Name</label>
-            <input id="name" type="text" placeholder="Your name" required=""
-                class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800">
-        </div>
-        <div>
-            <label for="email" class="block mb-1 ml-1">Email</label>
-            <input id="email" type="email" placeholder="Your email" required=""
-                class="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800">
-        </div>
-        <div>
-            <label for="message" class="block mb-1 ml-1">Message</label>
-            <textarea id="message" type="text" placeholder="Message..."
-                class="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800"></textarea>
-        </div>
-        <div>
-            <button type="submit"
-                class="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400 hover:ring-violet-400 dark:text-gray-900">Send</button>
-        </div>
-    </form>
-</section> --}}
-
-
-
 <section class="py-6 dark:bg-gray-800 dark:text-gray-50">
     <div class="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
         <div class="py-6 md:py-0 md:px-6">
@@ -93,43 +65,5 @@
 </section>
 
 
-
-
-
-{{-- 
-<div class="w-full flex items-center justify-center my-12 rounded py-2">
-<form method="POST" action="{{ route('contact.submit') }}">
-    @csrf
-        <div class="bg-gray-900 shadow rounded py-12 lg:px-28 ">
-            <p class="md:text-3xl text-xl font-bold leading-7 text-center text-gray-100">Contactame</p>
-            <div class="md:flex items-center mt-12">
-                <div class="md:w-72 flex flex-col mr-2">
-                    <label class="text-base font-semibold leading-none text-gray-100">Nombre</label>
-                    <input tabindex="0" arial-label="Please input name" type="text" name="name"
-                        class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
-                        placeholder="Please input  name" />
-                </div>
-                <div class="md:w-72 flex flex-col ">
-                    <label class="text-base font-semibold leading-none text-gray-100">Email</label>
-                    <input tabindex="0" arial-label="Please input email address" type="email" name="email"
-                        class="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
-                        placeholder="Escribe tu Email" />
-                </div>
-            </div>
-
-            <div>
-                <div class="w-full flex flex-col mt-8">
-                    <label class="text-base font-semibold leading-none text-gray-100">Mensaje</label>
-                    <textarea tabindex="0" aria-label="Deja un mensaje" role="textbox" name="content"
-                        class="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 resize-none"></textarea>
-                </div>
-            </div>
-            <div class="flex items-center justify-center w-full">
-                <button
-                    class="mt-3 self-center px-5 py-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Enviar</button>
-            </div>
-        </div>
-    </form>
-</div> --}}
 
 @include('footer')

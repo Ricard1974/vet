@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +19,10 @@ class PostFactory extends Factory
     {
         return [
             'category_id'=>'1',
-            'title'=> $this->faker->text(15),
-            'slug'=>$this->faker->paragraph(),
+            'title'=> $this->faker->text(20),
+            'slug'  => function ($attr) {
+                return Str::slug($attr['title']);
+            },
             'content'=> $this->faker->realText($maxNbChars = 200, $indexSize = 2),
             'is_published'=> $this->faker->boolean()
         ];

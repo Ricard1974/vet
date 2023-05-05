@@ -25,19 +25,26 @@
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
-                        href="/blog">Blog</a>
+                        href="{{ route('blog_index') }}">Blog</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
                         href="/contact">Contacto</a>
                 </li>
-                <div class="items-center flex-shrink-0 hidden lg:flex">
-                    <a href="/admin/login"
-                        class="self-center px-5 py-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Admin</a>
-                </div>
-
+                <li>
+                    <div class="items-center flex-shrink-0  lg:flex">
+                        <a href="/admin/login"
+                            class="self-center px-5 py-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Admin</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
+
+
+
+
+
+
 
     <div class="container mx-auto mt-24 px-4">

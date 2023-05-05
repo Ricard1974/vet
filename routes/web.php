@@ -20,8 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-   
 
-Route::get('blog', [FrontEndController::class, 'index'])->name('blog_index');
-Route::get('contact', [ContactController::class, 'show'])->name('contact.show');
-Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+
+
+Route::get ('contact', [ContactController::class, 'showcontact'])->name('contact.show');
+Route::post('contact', [ContactController::class, 'submitcontact'])->name('contact.submit');
+
+// Route::prefix('/blog')->group(function(){
+
+    Route::get('/blog', [FrontEndController::class, 'index'])->name('blog_index');
+    Route::get('/blog/{id}', [FrontEndController::class, 'show'])->name('blog_show');
+// });

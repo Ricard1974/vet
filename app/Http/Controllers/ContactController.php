@@ -9,12 +9,12 @@ use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
-    public function show()
+    public function showcontact()
     {
         return view ('contacts.show');
     }
 
-    public function submit(ContactRequest $request)
+    public function submitcontact(ContactRequest $request)
     {
         Mail::to('test@test.com')->send(new ContactMail($request->name, $request->email, $request->content));
         return redirect('/');
