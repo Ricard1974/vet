@@ -20,17 +20,16 @@
 
             @foreach ($posts as $post=>$item)
            <article class="flex flex-col dark:bg-gray-900">
-            <a rel="noopener noreferrer" href="{{ route('blog_show', $item->id) }}" aria-label="Te nulla oportere reprimique his dolorum">
+            <a rel="noopener noreferrer" href="{{ route('blog_show', $item->id) }}" aria-label="">
                 <img alt="" class="object-cover w-full h-52 dark:bg-gray-500"
                     src="{{ $item->getFirstMediaUrl('post','thumb') }}">
             </a>
             <div class="flex flex-col flex-1 p-6">
-                <a rel="noopener noreferrer" href="{{ $item->category->name }}"
-                    class="text-xs tracking-wider uppercase hover:underline dark:text-violet-400">{{ $item->category->name }}</a>
+                <p class="text-xs tracking-wider uppercase dark:text-violet-400">{{ $item->category->name }}</p>
                     <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">{{ $item->title }}</h3>
                 <p class="flex-1 py-2 text-sm font-semibold leading-snug">{{ $item->content }}</p>
                 <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
-                    <span>{{ $item->created_at->since() }}</span>
+                    <span class="dark:text-violet-400">{{ $item->updated_at->since() }}</span>
         
                 </div>
             </div>

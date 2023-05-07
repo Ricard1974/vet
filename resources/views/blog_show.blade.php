@@ -17,18 +17,19 @@
                 <div class="space-y-2">
                     <h1 class="inline-block text-2xl font-bold sm:text-3xl">{{ $post->title }}</h1>
                     <p class="text-xs dark:text-gray-400">Creado 
-                    {{ $post->created_at->since() }}
+                    {{ $post->updated_at->since() }}
                     </p>
                 </div>
                 <div class="dark:text-gray-100">
                     <p>{{ $post->content }}</p>
-                    <div class="items-center flex-shrink-0  lg:flex">
-                      
-                        <a href="{{ URL::previous() }}"
-                            class="self-center px-5 py-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" class="w-4">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg></a>
+                    <div class=" items-center flex-shrink-1 lg:flex ">
+                            <a href="{{ URL::previous() }}" title=""
+                                class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" class="w-4">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </a>
                     </div>
                 </div>
             </div>

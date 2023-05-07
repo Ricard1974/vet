@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use Closure;
-use Filament\Forms;
 use App\Models\Post;
 use Filament\Tables;
 use Illuminate\Support\Str;
@@ -16,14 +15,8 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\ToggleColumn;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\PostResource\Pages;
-use Filament\Forms\Components\BelongsToSelect;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Resources\RelationManagers\RelationManager;
-use App\Filament\Resources\PostResource\RelationManagers;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;

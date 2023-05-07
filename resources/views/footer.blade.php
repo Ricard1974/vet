@@ -2,7 +2,7 @@
 <footer class="bg-gray-800 text-center lg:text-left mt-2">
 	<div class="p-4 text-center text-neutral-700 dark:text-neutral-200">
 		© 2023 Copyright:
-		<a class="text-neutral-800 dark:text-neutral-400" href="https://ricardev.es/">VET</a>
+		<a class="text-neutral-800 dark:text-neutral-400" href="https://ricardev.es/">ricardev.es</a>
 	</div>
 </footer>
 <script>

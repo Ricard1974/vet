@@ -22,6 +22,11 @@ Route::get('/', function () {
 
 
 
+Route::get('/timeline', function () {
+    return view('timeline');
+});
+
+
 
 
 Route::get ('contact', [ContactController::class, 'showcontact'])->name('contact.show');

@@ -1,12 +1,31 @@
 @include('head')
 @include('nav')
 
-
+<section class="py-6 dark:bg-gray-800 dark:text-gray-100">
+        <div class="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
+            <h1 class="text-4xl font-bold leading-none text-center sm:text-5xl">Nuestro equipo</h1>
+            <p class="max-w-2xl text-center dark:text-gray-400">At a assumenda quas cum earum ut itaque commodi saepe
+                rem aspernatur quam natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius
+                sunt!</p>
+    
+            @foreach ($equipo as $equipo=>$item)
+            <div class="flex flex-row flex-wrap-reverse justify-center">
+                <div class="flex flex-col justify-center m-8 text-center">
+                    <img alt="{{ $item->nombre }} {{ $item->apellido }}"
+                        class="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500"
+                        src="{{ $item->getFirstMediaUrl('equipo') }}">
+                    <p class="text-xl font-semibold leading-tight">{{ $item->nombre }} {{ $item->apellido }}</p>
+                    <p class="dark:text-gray-400">{{ $item->posicion }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
 <section class="py-6 dark:bg-gray-800 dark:text-gray-50">
     <div class="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
         <div class="py-6 md:py-0 md:px-6">
-            <h1 class="text-4xl font-bold">Contactame</h1>
+            <h1 class="text-4xl font-bold">Contactanos</h1>
             <p class="pt-2 pb-4">Rellena el formulario para empezar a conversar</p>
             <div class="space-y-4">
                 <p class="flex items-center">
@@ -63,6 +82,8 @@
 
     </div>
 </section>
+
+
 
 
 

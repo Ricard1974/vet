@@ -6,12 +6,14 @@ use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
+use App\Models\Equipo;
 
 class ContactController extends Controller
 {
     public function showcontact()
     {
-        return view ('contacts.show');
+        $equipo = Equipo::all();
+        return view ('contacts.show', compact('equipo'));
     }
 
     public function submitcontact(ContactRequest $request)
