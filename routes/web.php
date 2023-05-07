@@ -29,11 +29,10 @@ Route::get('/timeline', function () {
 
 
 
-Route::get ('contact', [ContactController::class, 'showcontact'])->name('contact.show');
+Route::get('contact', [ContactController::class, 'showcontact'])->name('contact.show');
 Route::post('contact', [ContactController::class, 'submitcontact'])->name('contact.submit');
 
-// Route::prefix('/blog')->group(function(){
-
-    Route::get('/blog', [FrontEndController::class, 'index'])->name('blog_index');
-    Route::get('/blog/{id}', [FrontEndController::class, 'show'])->name('blog_show');
-// });
+Route::prefix('/blog')->group(function () {
+    Route::get('/', [FrontEndController::class, 'index'])->name('blog_index');
+    Route::get('/{id}', [FrontEndController::class, 'show'])->name('blog_show');
+});

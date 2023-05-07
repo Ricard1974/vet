@@ -34,7 +34,7 @@
                 <li>
                     <div class="items-center flex-shrink-0  lg:flex">
                         <a href="/admin/login"
-                            class="self-center px-5 py-2 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Admin</a>
+                            class="self-center px-3 py-1 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Admin</a>
                     </div>
                 </li>
             </ul>
