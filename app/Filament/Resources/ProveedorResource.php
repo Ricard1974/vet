@@ -109,10 +109,6 @@ class ProveedorResource extends Resource
 
                             ]),
                     ])->columnSpan('full'),
-
-
-
-
             ]);
     }
 

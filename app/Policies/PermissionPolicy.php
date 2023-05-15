@@ -29,7 +29,7 @@ class PermissionPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasRole(['Admin', 'Guest']);
+        return $user->hasRole('Admin');
     }
 
     /**

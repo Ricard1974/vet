@@ -206,10 +206,10 @@ return [
         |--------------------------------------------------------------------------
         */
             'labels' => [
-                'primary' => 'Primary category',
-                'secondary' => 'Secondary category',
-                'danger' => 'Danger category',
-                'success' => 'Success category',
+                'primary' => 'Categoria Principal',
+                'secondary' => 'Categoria Secundaria',
+                'danger' => 'Atención',
+                'success' => 'Echo',
             ],
             'icons' => [
                 'primary' => 'heroicon-o-clipboard',

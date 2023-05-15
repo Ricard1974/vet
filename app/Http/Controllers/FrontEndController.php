@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galeria;
 use App\Models\Post;
 
 
@@ -23,4 +24,13 @@ class FrontEndController extends Controller
             ['post' => Post::findOrFail($id)]
         );
     }
+    public function indexgaleria()
+    {
+        $galerias = Galeria::orderBy('created_at', 'desc')->where('is_published', 1)->get();
+        return view('galeria_index', compact('galerias'));
+        // dd($posts);
+
+    }
+    
+
 }

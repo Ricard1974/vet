@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/galeria', [FrontEndController::class, 'indexgaleria'])->name('galeria_index');
 
 Route::get('/timeline', function () {
     return view('timeline');

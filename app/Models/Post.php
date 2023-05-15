@@ -31,9 +31,10 @@ class Post extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->width(200)
-            ->height(200)
-            ->sharpen(10);
+            ->width(300)
+            ->height(300)
+            ->sharpen(10)
+            ->crop('crop-center', 200, 200);
     }
     public function last(){
         return static::all()->last();

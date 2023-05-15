@@ -51,7 +51,7 @@ class OwnerResource extends Resource
                     ->maxLength(length: 30),
                 TextInput::make(name: 'adress')
                     ->required()
-                    ->maxLength(length: 100)->label('Direccion'),
+                    ->maxLength(length: 100)->label('Dirección'),
                 TextInput::make(name: 'pc')
                     ->required()
                     ->maxLength(length: 6)->label('Codigo Postal'),
@@ -61,9 +61,9 @@ class OwnerResource extends Resource
                     ->label('Ciudad'),
                 TextInput::make(name: 'country')
                     ->required()
-                    ->maxLength(length: 20)->label('Pais'),
+                    ->maxLength(length: 20)->label('País'),
                 TextInput::make(name: 'phone')
-                    ->label('Telefono')
+                    ->label('Teléfono')
                     ->required()
                     ->tel()
                 ])->columns(2)
@@ -79,7 +79,7 @@ class OwnerResource extends Resource
                 TextColumn::make('name')->label('Nombre')->searchable()->sortable(),
                 TextColumn::make('surname')->label('Apellido')->searchable()->sortable(),
                 TextColumn::make('email')->label('E-mail')->searchable(),
-                TextColumn::make('phone')->label('Telefono'),
+                TextColumn::make('phone')->label('Teléfono'),
                 TextColumn::make('adress')->label('Dirección')->limit(10),
                 TextColumn::make('city')->label('Ciudad'),
                 TextColumn::make('pc')->label('Código Postal')->sortable(),

@@ -39,6 +39,7 @@ return [
     'locales' => [
         // 'ar' => ['name' => 'Arabic',                 'script' => 'Arab', 'native' => 'العربية', 'flag_code' => 'sa'],
         'en' => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'flag_code' => 'us'],
+        'ca' => ['name' => 'Catalan',                'script' => 'Latn', 'native' => 'català', 'flag_code' => '' ],
         'es' => ['name' => 'Spanish',                'script' => 'Latn', 'native' => 'español', 'flag_code' => '' ],
         'fr' => ['name' => 'French',                 'script' => 'Latn', 'native' => 'français', 'flag_code' => 'fr'],
 
@@ -62,7 +63,6 @@ return [
         //'nb'          => ['name' => 'Norwegian Bokmål',       'script' => 'Latn', 'native' => 'Bokmål', 'flag_code' => '' ],
         //'bs'          => ['name' => 'Bosnian',                'script' => 'Latn', 'native' => 'bosanski', 'flag_code' => '' ],
         //'br'          => ['name' => 'Breton',                 'script' => 'Latn', 'native' => 'brezhoneg', 'flag_code' => '' ],
-        //'ca'          => ['name' => 'Catalan',                'script' => 'Latn', 'native' => 'català', 'flag_code' => '' ],
         //'ch'          => ['name' => 'Chamorro',               'script' => 'Latn', 'native' => 'Chamoru', 'flag_code' => '' ],
         //'ny'          => ['name' => 'Chewa',                  'script' => 'Latn', 'native' => 'chiCheŵa', 'flag_code' => '' ],
         //'kde'         => ['name' => 'Makonde',                'script' => 'Latn', 'native' => 'Chimakonde', 'flag_code' => '' ],
