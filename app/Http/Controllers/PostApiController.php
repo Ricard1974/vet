@@ -15,4 +15,10 @@ class PostApiController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->get();
         return PostResource::collection($posts);
 }
+
+    public function show($id)
+    {
+        $data = Post::findOrFail($id);
+        return ($data);
+    }
 }

@@ -68,7 +68,7 @@
                 </li>
 </ul> --}}
 
-
+{{-- 
 
 <section class="dark:bg-gray-800 dark:text-gray-100">
     <div class="container px-4 py-16 mx-auto space-y-8 lg:max-w-3xl">
@@ -203,7 +203,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 

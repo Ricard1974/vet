@@ -29,7 +29,19 @@
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
+                        href="{{ route('galeria_index') }}">Galeria</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
                         href="/contact">Contacto</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
+                        href="/timeline">Timeline</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
+                        href="/infoapi">API</a>
                 </li>
                 <li>
                     <div class="items-center flex-shrink-0  lg:flex">

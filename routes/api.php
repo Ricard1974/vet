@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostApiController;
+use App\Http\Controllers\ProveedorApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/post', [PostApiController::class, 'index']);
 Route::get('/post/{id}', [PostApiController::class, 'show']);
+Route::get ('/proveedor',[ProveedorApiController::class,'index']);
+Route::get ('/proveedor/{id}',[ProveedorApiController::class,'show']);
