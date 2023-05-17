@@ -6,7 +6,7 @@
 
 <section class="py-6 dark:bg-gray-800">
         <div class="container flex flex-col justify-center p-4 mx-auto">
-            <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2"></div>
 
 @foreach ($galerias as $galeria=>$item)
 
@@ -19,3 +19,4 @@
     </section>
 
 @include('footer')
+

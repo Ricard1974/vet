@@ -20,8 +20,7 @@ class FrontEndController extends Controller
     {
 
         return view(
-            'blog_show',
-            ['post' => Post::findOrFail($id)]
+            'blog_show',['post' => Post::findOrFail($id)]
         );
     }
     public function indexgaleria()
