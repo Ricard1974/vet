@@ -53,12 +53,12 @@ class DatabaseSeeder extends Seeder
         Owner::factory(10)->create();
         Patient::factory(10)->create();
         Post::factory(5)->create();
-        // \App\Models\User::factory(10)->create();       
+        \App\Models\User::factory(10)->create();       
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
 
 
     }
