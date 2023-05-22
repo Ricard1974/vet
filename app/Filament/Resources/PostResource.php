@@ -21,6 +21,7 @@ use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\BlogPostResource\Widgets\PostStatsOverview;
+use App\Filament\Resources\PostResource\RelationManagers\TagsRelationManager;
 
 class PostResource extends Resource
 {
@@ -30,6 +31,7 @@ class PostResource extends Resource
 
     protected static ?string $navigationGroup = 'Frontend';
     protected static ?int $navigationSort = 3;
+    protected static ?string $inverseRelationship = 'section'; // Since the inverse related model is `Category`, this is normally `category`, not `section`.
 
     public static function form(Form $form): Form
     {
@@ -40,7 +42,10 @@ class PostResource extends Resource
                 Card::make()
                     ->schema([
                         Select::make('category_id')
-                            ->relationship('category', 'name')->label('Categoria'),
+                            ->relationship('category', 'name')->label('Categoria')->required(),
+                        Select::make('tags_id')
+                            ->multiple()
+                            ->relationship('tags', 'name')->preload()->label('Tags'),
                         TextInput::make('title')->reactive()
                             ->afterStateUpdated(function (Closure $set, $state) {
                                 $set('slug', Str::slug($state));
@@ -48,9 +53,10 @@ class PostResource extends Resource
                         TextInput::make('slug'),
                         SpatieMediaLibraryFileUpload::make('image')->image()->label('Imagen (jpg, png, svg, webp, pdf, mp4 , mov y web)')->removeUploadedFileButtonPosition('right')->collection('post')->enableOpen(),
                         Textarea::make('content')
-                        ->label('Contenido')
-                        ->rows(10)
-                        ->cols(20),
+                            ->label('Contenido')
+                            ->rows(10)
+                            ->cols(20)
+                            ->required(),
                         Toggle::make('is_published')->inline()->label('Está Publicado')->columnSpan('full')
                     ])
                     ->columns(2)
@@ -63,9 +69,9 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                // TextColumn::make('id')->sortable(),
+                TextColumn::make('id')->sortable(),
                 TextColumn::make('title')->limit(50)->sortable()->label('Título')->searchable(),
-                // TextColumn::make('slug')->limit(50),
+                TextColumn::make('slug')->limit(50),
                 ToggleColumn::make('is_published')->label('Publicado')->sortable(),
                 SpatieMediaLibraryImageColumn::make('image')->label('Thumbnail')->collection('post'),
                 TextColumn::make('created_at')->label('Creado')->sortable(),
@@ -87,7 +93,7 @@ class PostResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            // TagsRelationManager::class
         ];
     }
 
