@@ -27,12 +27,10 @@
             <div class="flex flex-col flex-1 p-6">
                 <p class="text-xs tracking-wider uppercase dark:text-violet-400">{{ $item->category->name }}</p>
 
-                @foreach ($posts as $post =>$item)
-                {{ dd($item) }}
-                <p class="text-xs tracking-wider uppercase dark:text-violet-400">{{ $item->tag->name}}</p>
+
+                {{-- <p class="text-xs tracking-wider uppercase dark:text-violet-400">{{ $item->tag}}</p> --}}
                     
-                @endforeach
-                
+
                 
                 
                 <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">{{ $item->title }}</h3>
