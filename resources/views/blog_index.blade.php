@@ -26,7 +26,16 @@
             </a>
             <div class="flex flex-col flex-1 p-6">
                 <p class="text-xs tracking-wider uppercase dark:text-violet-400">{{ $item->category->name }}</p>
-                    <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">{{ $item->title }}</h3>
+
+                @foreach ($posts as $post =>$item)
+                {{ dd($item) }}
+                <p class="text-xs tracking-wider uppercase dark:text-violet-400">{{ $item->tag->name}}</p>
+                    
+                @endforeach
+                
+                
+                
+                <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">{{ $item->title }}</h3>
                 <p class="flex-1 py-2 text-sm font-semibold leading-snug">{{ $item->content }}</p>
                 <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
                     <span class="dark:text-violet-400">{{ $item->updated_at->since() }}</span>

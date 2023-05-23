@@ -15,6 +15,7 @@ class Tag extends Model
     public function posts():HasMany
     {
         return $this->HasMany(Post::class);
+
     }
 
 }

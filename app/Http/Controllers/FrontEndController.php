@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Galeria;
+use App\Models\Tag;
 use App\Models\Post;
+use App\Models\Galeria;
 
 
 class FrontEndController extends Controller
