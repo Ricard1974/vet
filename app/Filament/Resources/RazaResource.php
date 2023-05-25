@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\RazaResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -20,7 +21,9 @@ class RazaResource extends Resource
 {
     protected static ?string $model = Raza::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+
+    protected static ?string $navigationGroup = 'DB';
 
     public static function form(Form $form): Form
     {
@@ -40,15 +43,16 @@ class RazaResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('tipo.nombre'),
-                Tables\Columns\TextColumn::make('nombre'),
+                Tables\Columns\TextColumn::make('tipo.nombre')->searchable(),
+                Tables\Columns\TextColumn::make('nombre')->searchable(),
                 SpatieMediaLibraryImageColumn::make('image')->label('Imagen')->collection('raza'),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

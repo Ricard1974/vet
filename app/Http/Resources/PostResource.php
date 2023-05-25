@@ -2,9 +2,8 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Tag;
+
 use Illuminate\Http\Request;
-use App\Filament\Resources\TagResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource

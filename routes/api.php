@@ -1,9 +1,14 @@
 <?php
 
-use App\Http\Controllers\PostApiController;
-use App\Http\Controllers\ProveedorApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostApiController;
+use App\Http\Controllers\AnimalesApiController;
+use App\Http\Controllers\ProveedorApiController;
+use App\Http\Controllers\CaracteristicasApiController;
+use App\Http\Resources\CaracteristicasApiResource;
+use App\Models\Caracteristica;
+use App\Models\Tipo;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::get('/animales', [CaracteristicasApiController::class, 'index']);
+// Route::get('/animales', [AnimalesApiController::class, 'index']);
 Route::get('/post', [PostApiController::class, 'index']);
 Route::get('/post/{id}', [PostApiController::class, 'show']);
 Route::get ('/proveedor',[ProveedorApiController::class,'index']);

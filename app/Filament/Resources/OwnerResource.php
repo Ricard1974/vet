@@ -78,11 +78,12 @@ class OwnerResource extends Resource
             ->columns([
                 TextColumn::make('name')->label('Nombre')->searchable()->sortable(),
                 TextColumn::make('surname')->label('Apellido')->searchable()->sortable(),
-                TextColumn::make('email')->label('E-mail')->searchable(),
                 TextColumn::make('phone')->label('Teléfono'),
-                TextColumn::make('adress')->label('Dirección')->limit(10),
-                TextColumn::make('city')->label('Ciudad'),
-                TextColumn::make('pc')->label('Código Postal')->sortable(),
+                TextColumn::make('email')->label('E-mail')->searchable(),
+                TextColumn::make('adress')->label('Dirección')->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('pc')->label('Código Postal')->sortable()->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('city')->label('Ciudad')->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('country')->label('Pais')->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

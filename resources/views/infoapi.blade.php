@@ -4,38 +4,36 @@
 
 
 <section class="dark:bg-gray-800 dark:text-gray-100">
-    <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
-        <p class="p-2 text-sm font-medium tracking-wider text-center uppercase">Como Funciona</p>
-        <h2 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Punto final de la API</h2>
-        <div class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
-            <details>
-                <summary class="py-2 outline-none cursor-pointer focus:underline">Api de los Post</summary>
-                <div class="px-4 pb-4">
-                    <p>ricardev.es/api/post</p>
-                    <p>Vas a tener como respuesta un JSON, estos datos han sido creados con Faker </p>
-                    <p>
+        <div class="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
+            <h2 class="text-2xl font-semibold sm:text-4xl text-center">Como Funciona</h2>
+            <p class="mt-4 mb-8 dark:text-gray-400 text-center">Punto final de la API</p>
+            <div class="space-y-4">
+                <details class="w-full border rounded-lg border-dashed">
+                    <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de los Post</summary>
+                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+                        <a href="{{ url('/api/post') }}">ricardev.es/api/post</a>
+                        <br>
+                        Vas a tener como respuesta un JSON
+                        <br>
                         <img class="p-3" width="800" src="{{url('/img/json_post.png')}}" alt="Resultado Json">
                     </p>
-
-                </div>
-            </details>
-            <details>
-                <summary class="py-2 outline-none cursor-pointer focus:underline">Api de Proveedores</summary>
-                <div class="px-4 pb-4">
-                    <p>En proceso</p>
-                </div>
-            </details>
-            <details>
-                <summary class="py-2 outline-none cursor-pointer focus:underline">Api de Propietarios
-                </summary>
-                <div class="px-4 pb-4 space-y-2">
-                    <p>En proceso</p>
-
-                </div>
-            </details>
+                </details>
+                <details class="w-full border rounded-lg border-dashed">
+                    <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de Proveedores</summary>
+                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+                            <a href="{{ url('/api/proveedor') }}">ricardev.es/api/proveedor</a>
+                            <br>
+                            Vas a tener como respuesta un JSON
+                            <br>
+                            <img class="p-3" width="800" src="{{url('/img/json_proveedor.png')}}" alt="Resultado Json">
+                        </p>
+                </details>
+                <details class="w-full border rounded-lg border-dashed">
+                    <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de Propietarios</summary>
+                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">En Proceso</p>
+                </details>
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
 @include('footer')

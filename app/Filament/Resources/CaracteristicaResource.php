@@ -15,18 +15,23 @@ use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\CaracteristicaResource\Pages;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\CaracteristicaResource\RelationManagers;
 
 class CaracteristicaResource extends Resource
 {
     protected static ?string $model = Caracteristica::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+
+    protected static ?string $navigationGroup = 'DB';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Select::make('tipo_id')
+                ->relationship('tipo', 'nombre')->preload()->searchable()->required(),
                 Select::make('raza_id')
                     ->relationship('raza', 'nombre')->preload()->searchable()->required(),
                 TextInput::make('origen')
@@ -69,6 +74,7 @@ class CaracteristicaResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('tipo.nombre')->toggleable(),
                 TextColumn::make('raza.nombre')->toggleable(),
                 TextColumn::make('origen')->toggleable(),
                 TextColumn::make('color')->toggleable(),
@@ -78,6 +84,7 @@ class CaracteristicaResource extends Resource
                 TextColumn::make('enfermedades_geneticas')->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('historia')->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('notas_adicionales')->toggleable(isToggledHiddenByDefault: true),
+                SpatieMediaLibraryImageColumn::make('raza.image')->label('Imagen')->collection('raza')->toggleable(),
 
             ])
             ->filters([

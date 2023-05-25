@@ -117,17 +117,17 @@ class ProveedorResource extends Resource
         return $table
             ->columns([
                 // TextColumn::make('id')->label('Id')->searchable()->sortable(),
-                TextColumn::make('name')->weight('light')->label('Empresa')->searchable()->sortable(),
-                TextColumn::make('cname')->label('Nombre Contacto')->searchable()->sortable(),
-                TextColumn::make('phone')->label('Teléfono'),
+                TextColumn::make('name')->weight('light')->label('Empresa')->searchable()->sortable()->toggleable(),
+                TextColumn::make('cname')->label('Nombre Contacto')->searchable()->sortable()->toggleable(),
+                TextColumn::make('phone')->label('Teléfono')->toggleable(),
                 // TextColumn::make('phone2')->label('Teléfono 2'),
-                TextColumn::make('adress')->label('Dirección')->limit(10),
-                TextColumn::make('cif')->label('CIF')->searchable(),
-                TextColumn::make('nif')->label('NIF')->searchable(),
-                TextColumn::make('www')->label('Web')->limit(10),
-                SpatieMediaLibraryImageColumn::make('image')->label('Logotipo'),
+                TextColumn::make('adress')->label('Dirección')->toggleable(),
+                TextColumn::make('cif')->label('CIF')->searchable()->toggleable(),
+                TextColumn::make('nif')->label('NIF')->searchable()->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('www')->label('Web')->toggleable(isToggledHiddenByDefault: true),
+                SpatieMediaLibraryImageColumn::make('image')->label('Logotipo')->toggleable(isToggledHiddenByDefault: true),
                 //TextColumn::make('contract')->label('Docs')->limit(10),
-                TextColumn::make('created_at')->label('Desde')->sortable(),
+                TextColumn::make('created_at')->label('Desde')->sortable()->toggleable(isToggledHiddenByDefault: true),
 
             ])
 
