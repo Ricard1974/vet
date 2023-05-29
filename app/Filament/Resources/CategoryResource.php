@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Columns\TextInputColumn;
 use App\Filament\Resources\CategoryResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use App\Filament\Resources\CategoryResource\RelationManagers;
 use App\Filament\Resources\CategoryResource\RelationManagers\PostsRelationManager;
 
@@ -62,7 +63,8 @@ class CategoryResource extends Resource
                 Tables\Actions\DeleteAction::make()->requiresConfirmation(),
             ])
             ->bulkActions([
-                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+            // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                ExportBulkAction::make()->label('Exportar'),
             ]);
     }
 

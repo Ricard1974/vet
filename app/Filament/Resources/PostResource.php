@@ -86,7 +86,7 @@ class PostResource extends Resource
             ])
             ->bulkActions([
                 // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
-                ExportBulkAction::make(),
+                ExportBulkAction::make()->label('Exportar'),
             ]);
     }
 

@@ -26,7 +26,6 @@ use App\Models\Tipo;
 // });
 
 Route::get('/animales', [CaracteristicasApiController::class, 'index']);
-// Route::get('/animales', [AnimalesApiController::class, 'index']);
 Route::get('/post', [PostApiController::class, 'index']);
 Route::get('/post/{id}', [PostApiController::class, 'show']);
 Route::get ('/proveedor',[ProveedorApiController::class,'index']);

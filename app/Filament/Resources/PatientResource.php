@@ -117,11 +117,12 @@ class PatientResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Nombre')->searchable()->sortable(),
-                TextColumn::make('type')->label('Tipo'),
-                TextColumn::make('date_of_birth')->label('Fecha Nacimiento'),
-                TextColumn::make('owner.name')->label('Propietario')->searchable()->sortable(),
-                TextColumn::make('chip')->label('Chip')->searchable()->sortable(),
+                TextColumn::make('name')->label('Nombre')->searchable()->sortable()->toggleable(),
+                TextColumn::make('type')->label('Tipo')->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('date_of_birth')->label('Fecha Nacimiento')->toggleable(),
+                TextColumn::make('owner.name')->label('Propietario')->searchable()->sortable()->toggleable(),
+                TextColumn::make('chip')->label('Chip')->searchable()->sortable()->toggleable(),
+                TextColumn::make('weight')->label('Peso')->searchable()->sortable()->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make(name: 'type')
@@ -141,7 +142,7 @@ class PatientResource extends Resource
             ])
             ->bulkActions([
                 // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
-                ExportBulkAction::make(),
+                ExportBulkAction::make()->label('Exportar'),
             ]);
     }
 

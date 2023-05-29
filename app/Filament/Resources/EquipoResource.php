@@ -15,6 +15,7 @@ use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\EquipoResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\EquipoResource\RelationManagers;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -99,7 +100,8 @@ class EquipoResource extends Resource
                 ]),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+            // Tables\Actions\DeleteBulkAction::make(),
+            ExportBulkAction::make()->label('Exportar'),
             ]);
     }
 

@@ -10,7 +10,8 @@ class CaracteristicasApiController extends Controller
 {
     public function index()
     {
-        $caracteristicas = Caracteristica::orderBy('created_at', 'asc')->get();
+        // $caracteristicas = Caracteristica::orderBy('created_at', 'asc')->get();
+        $caracteristicas = Caracteristica::all();
 
         return CaracteristicasApiResource::collection($caracteristicas);
     }

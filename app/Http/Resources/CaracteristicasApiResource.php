@@ -16,7 +16,6 @@ class CaracteristicasApiResource extends JsonResource
     {
         // return parent::toArray($request);
         return[
-
             'id' => $this->id,
             'tipo' => $this->tipo->nombre,
             'raza' => $this->raza->nombre,
