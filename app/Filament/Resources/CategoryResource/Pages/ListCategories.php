@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\CategoryResource\Pages;
 
-use App\Filament\Resources\CategoryResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\CategoryResource;
+use Konnco\FilamentImport\Actions\ImportField;
+use Konnco\FilamentImport\Actions\ImportAction;
 
 class ListCategories extends ListRecords
 {
@@ -14,6 +16,21 @@ class ListCategories extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+
+            ImportAction::make()
+                ->massCreate(false)
+                ->handleBlankRows(true)
+                ->fields([
+                    // ImportField::make('id')
+                    //     ->label('id')
+                    //     ->required(),
+                    ImportField::make('name')
+                        ->label('name')
+                        ->required(),
+                    ImportField::make('slug')
+                        ->label('slug')
+                        ->required(),
+                ], columns: 2)
         ];
     }
 }

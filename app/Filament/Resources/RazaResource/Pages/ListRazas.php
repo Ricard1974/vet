@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\RazaResource\Pages;
 
-use App\Filament\Resources\RazaResource;
 use Filament\Pages\Actions;
+use App\Filament\Resources\RazaResource;
 use Filament\Resources\Pages\ListRecords;
+use Konnco\FilamentImport\Actions\ImportField;
+use Konnco\FilamentImport\Actions\ImportAction;
 
 class ListRazas extends ListRecords
 {
@@ -14,6 +16,17 @@ class ListRazas extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            ImportAction::make()
+                ->massCreate(false)
+                ->handleBlankRows(true)
+                ->fields([
+                    ImportField::make('tipo_id')
+                        ->label('Id del tipo')
+                        ->required(),
+                    ImportField::make('nombre')
+                        ->label('Nombre')
+                        ->required(),
+                    ])
         ];
     }
 }

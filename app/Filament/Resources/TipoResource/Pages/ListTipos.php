@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\TipoResource\Pages;
 
-use App\Filament\Resources\TipoResource;
 use Filament\Pages\Actions;
+use App\Filament\Resources\TipoResource;
 use Filament\Resources\Pages\ListRecords;
+use Konnco\FilamentImport\Actions\ImportField;
+use Konnco\FilamentImport\Actions\ImportAction;
 
 class ListTipos extends ListRecords
 {
@@ -14,6 +16,14 @@ class ListTipos extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            ImportAction::make()
+                ->massCreate(false)
+                ->handleBlankRows(true)
+                ->fields([
+                    ImportField::make('nombre')
+                        ->label('Nombre')
+                        ->required(),
+                ])
         ];
     }
 }

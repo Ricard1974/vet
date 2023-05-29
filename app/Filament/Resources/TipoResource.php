@@ -36,6 +36,7 @@ class TipoResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('nombre'),
             ])
             ->filters([
@@ -43,9 +44,10 @@ class TipoResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-            // Tables\Actions\DeleteBulkAction::make(),
+            Tables\Actions\DeleteBulkAction::make(),
                 ExportBulkAction::make()->label('Exportar'),
             ]);
     }

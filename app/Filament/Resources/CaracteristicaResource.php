@@ -56,15 +56,15 @@ class CaracteristicaResource extends Resource
                 'Sur de África',
             ]),
                 TextInput::make('color')
-                    ->maxLength(50),
+                    ->maxLength(255),
                 TextInput::make('tamano')->datalist([
                     'Pequeño',
                     'Mediano',
                     'Grande',
                 ]),
-                Textarea::make('apariencia_fisica'),
                 TextInput::make('esperanza_vida')
-                    ->numeric(),
+                ->numeric(),
+                Textarea::make('apariencia_fisica'),
                 Textarea::make('enfermedades_geneticas'),
                 Textarea::make('historia'),
                 Textarea::make('notas_adicionales'),
