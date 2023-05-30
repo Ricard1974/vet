@@ -6,8 +6,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Resources\PostResource;
-use App\Http\Resources\PostResource as ResourcesPostResource;
-use App\Models\Tag;
 
 class PostApiController extends Controller
 {

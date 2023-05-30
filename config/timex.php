@@ -209,7 +209,7 @@ return [
                 'primary' => 'Categoria Principal',
                 'secondary' => 'Categoria Secundaria',
                 'danger' => 'Atención',
-                'success' => 'Echo',
+                'success' => 'Con éxito',
             ],
             'icons' => [
                 'primary' => 'heroicon-o-clipboard',

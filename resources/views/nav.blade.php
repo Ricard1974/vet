@@ -33,12 +33,16 @@
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
-                        href="/contact">Contacto</a>
+                        href="{{ route('animal_index') }}">Mascotas</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
-                        href="/timeline">Timeline</a>
+                        href="/contact">Contacto</a>
                 </li>
+                {{-- <li class="mr-3">
+                    <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
+                        href="/timeline">Timeline</a>
+                </li> --}}
                 <li class="mr-3">
                     <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
                         href="/infoapi">API</a>

@@ -30,10 +30,17 @@ Route::get('/infoapi', function () {
 });
 
 
+
+Route::prefix('/mascotas')->group(function () {
+    Route::get('/', [FrontEndController::class, 'index_mascotas'])->name('animal_index');
+    Route::get('/{id}', [FrontEndController::class, 'show_mascotas'])->name('animal_show');
+});
+
+
 Route::get('contact', [ContactController::class, 'showcontact'])->name('contact.show');
 Route::post('contact', [ContactController::class, 'submitcontact'])->name('contact.submit');
 
 Route::prefix('/blog')->group(function () {
-    Route::get('/', [FrontEndController::class, 'index'])->name('blog_index');
-    Route::get('/{id}', [FrontEndController::class, 'show'])->name('blog_show');
+    Route::get('/', [FrontEndController::class, 'index_blog'])->name('blog_index');
+    Route::get('/{id}', [FrontEndController::class, 'show_blog'])->name('blog_show');
 });

@@ -29,8 +29,14 @@
                         </p>
                 </details>
                 <details class="w-full border rounded-lg border-dashed">
-                    <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de Propietarios</summary>
-                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">En Proceso</p>
+                    <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de Animales</summary>
+                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+                        <a href="{{ url('/api/animales') }}">ricardev.es/api/animales</a>
+                        <br>
+                        Vas a tener como respuesta un JSON
+                        <br>
+                        <img class="p-3" width="800" src="{{url('/img/json_animales.png')}}" alt="Resultado Json">
+                        </p>
                 </details>
             </div>
         </div>

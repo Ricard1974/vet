@@ -56,35 +56,6 @@
 
 
 
-{{-- <div
-    class=" m-3 container max-w-4xl px-10 py-6 mx-auto shadow-md rounded-md bg-gray-800 mt-2 text-gray-100 border-x-4 dark:border-violet-400">
-    <div>
-        <img src="{{ $item->getFirstMediaUrl('post','thumb')}}" alt="">
-    </div>
-
-    <div class="flex items-center justify-between">
-        <span class="text-sm dark:text-gray-400">{{ $item->category->name }}</span>
-
-    </div>
-    <div class="mt-3">
-        <h1 class="text-3xl font-extrabold sm:text-4xl">{{ $item->title }}</h1>
-        <p class="mt-2">{{ $item->content }}</p>
-        <p></p>
-    </div>
-    <div class="flex items-center justify-between mt-4">
-
-        <div>
-            <p class="flex items-center">
-                <span class="dark:text-gray-400 text-sm"> {{ $item->created_at->since() }}</span>
-
-            </p>
-        </div>
-    </div>
-</div> --}}
-
-
-
-
 @include('footer')
 
 {{-- {{ dd($post) }} --}}

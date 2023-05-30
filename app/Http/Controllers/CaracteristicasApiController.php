@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\CaracteristicasApiResource;
 use App\Models\Caracteristica;
-use Illuminate\Http\Request;
 
 class CaracteristicasApiController extends Controller
 {

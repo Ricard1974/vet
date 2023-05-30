@@ -23,7 +23,7 @@
                 <div class="dark:text-gray-100">
                     <p>{{ $post->content }}</p>
                     <div class=" items-center flex-shrink-1 lg:flex mt-3">
-                            <a href="{{ URL::previous() }}" title=""
+                            <a href="{{route('blog_index') }}" title=""
                                 class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
                                 <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
                                     stroke-linejoin="round" class="w-4">

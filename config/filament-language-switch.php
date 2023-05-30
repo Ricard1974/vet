@@ -39,9 +39,9 @@ return [
     'locales' => [
         // 'ar' => ['name' => 'Arabic',                 'script' => 'Arab', 'native' => 'العربية', 'flag_code' => 'sa'],
         'en' => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'flag_code' => 'us'],
-        'ca' => ['name' => 'Catalan',                'script' => 'Latn', 'native' => 'català', 'flag_code' => '' ],
+        // 'ca' => ['name' => 'Catalan',                'script' => 'Latn', 'native' => 'català', 'flag_code' => '' ],
         'es' => ['name' => 'Spanish',                'script' => 'Latn', 'native' => 'español', 'flag_code' => '' ],
-        'fr' => ['name' => 'French',                 'script' => 'Latn', 'native' => 'français', 'flag_code' => 'fr'],
+        // 'fr' => ['name' => 'French',                 'script' => 'Latn', 'native' => 'français', 'flag_code' => 'fr'],
 
         // 'ace' => ['name' => 'Achinese',               'script' => 'Latn', 'native' => 'Aceh', 'flag_code' => ''],
         //'af'          => ['name' => 'Afrikaans',              'script' => 'Latn', 'native' => 'Afrikaans', 'flag_code' => '' ],

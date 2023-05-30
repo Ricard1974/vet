@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Proveedor;
-use Illuminate\Http\Request;
 use App\Http\Resources\ProveedorResource;
 
 
