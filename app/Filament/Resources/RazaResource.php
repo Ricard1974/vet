@@ -44,6 +44,8 @@ class RazaResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->searchable()->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('tipo_id')->searchable()->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('tipo.nombre')->searchable(),
                 Tables\Columns\TextColumn::make('nombre')->searchable(),
                 SpatieMediaLibraryImageColumn::make('image')->label('Imagen')->collection('raza'),

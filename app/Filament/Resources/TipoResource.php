@@ -36,7 +36,7 @@ class TipoResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('id')->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('nombre'),
             ])
             ->filters([
