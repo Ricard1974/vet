@@ -1,11 +1,19 @@
-/** @type {import('tailwindcss').Config} */
+// @type {import('tailwindcss').Config} 
 const colors = require("tailwindcss/colors");
 module.exports = {
+    darkMode: "class",
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
+
+    purge: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
+
     theme: {
         extend: {
             screens: {

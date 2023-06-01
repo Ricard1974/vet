@@ -1,4 +1,4 @@
-<body class="bg-gray-800 leading-normal tracking-normal">
+<body class="bg-gray-800 leading-normal tracking-normal text-gray-300">
 
     <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6 fixed w-full z-10 top-0">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -47,16 +47,17 @@
                     <a class="inline-block text-gray-100 no-underline hover:text-gray-300 hover:text-underline py-2 px-4"
                         href="/infoapi">API</a>
                 </li>
+
                 <li>
-                    <div class="items-center flex-shrink-0  lg:flex">
+                    <div class="items-center flex-shrink-0 lg:flex mt-2">
                         <a href="/admin/login"
-                            class="self-center px-3 py-1 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Admin</a>
+                            class="self-center text-md bg-violet-500 hover:bg-violet-700 text-gray-100 font-bold py-2 px-4 border border-violet-700 rounded">Admin</a>
                     </div>
+
                 </li>
             </ul>
         </div>
     </nav>
-
 
 
 

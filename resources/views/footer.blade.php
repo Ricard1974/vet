@@ -1,8 +1,7 @@
 </div>
 <footer class="bg-gray-800 text-center lg:text-left mt-2">
-	<div class="p-4 text-center text-neutral-700 dark:text-neutral-200">
-		© 2023 Copyright:
-		<a class="text-neutral-800 dark:text-neutral-400" href="https://ricardev.es/">ricardev.es</a>
+	<div class="p-4 text-center text-violet-200">
+		<a class="text-violet-400" href="https://ricardev.es/">© 2023 Copyright: ricardev.es</a>
 	</div>
 </footer>
 <script>

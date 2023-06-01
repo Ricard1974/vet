@@ -3,14 +3,14 @@
 
 
 
-<section class="dark:bg-gray-800 dark:text-gray-100">
+<section class="bg-gray-800 text-gray-100">
         <div class="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
             <h2 class="text-2xl font-semibold sm:text-4xl text-center">Como Funciona</h2>
-            <p class="mt-4 mb-8 dark:text-gray-400 text-center">Punto final de la API</p>
+            <p class="mt-4 mb-8 text-gray-400 text-center">Punto final de la API</p>
             <div class="space-y-4">
                 <details class="w-full border rounded-lg border-dashed">
                     <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de los Post</summary>
-                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-400">
                         <a href="{{ url('/api/post') }}">ricardev.es/api/post</a>
                         <br>
                         Vas a tener como respuesta un JSON
@@ -20,7 +20,7 @@
                 </details>
                 <details class="w-full border rounded-lg border-dashed">
                     <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de Proveedores</summary>
-                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-400">
                             <a href="{{ url('/api/proveedor') }}">ricardev.es/api/proveedor</a>
                             <br>
                             Vas a tener como respuesta un JSON
@@ -30,7 +30,7 @@
                 </details>
                 <details class="w-full border rounded-lg border-dashed">
                     <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Api de Animales</summary>
-                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+                    <p class="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-400">
                         <a href="{{ url('/api/animales') }}">ricardev.es/api/animales</a>
                         <br>
                         Vas a tener como respuesta un JSON
