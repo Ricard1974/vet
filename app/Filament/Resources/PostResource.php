@@ -20,6 +20,7 @@ use App\Filament\Resources\PostResource\Pages;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 use App\Filament\Resources\BlogPostResource\Widgets\PostStatsOverview;
 use App\Filament\Resources\PostResource\RelationManagers\TagsRelationManager;
 
@@ -85,8 +86,8 @@ class PostResource extends Resource
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
-                ExportBulkAction::make()->label('Exportar'),
+            // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+            FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
 

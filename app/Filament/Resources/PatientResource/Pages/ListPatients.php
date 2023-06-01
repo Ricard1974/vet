@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\PatientResource\Pages;
 
-use App\Filament\Resources\PatientResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\PatientResource;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class ListPatients extends ListRecords
 {
@@ -14,6 +15,14 @@ class ListPatients extends ListRecords
     {
         return [
             Actions\CreateAction::make()->label('Crear Paciente'),
+        ];
+    }
+    protected function getTableHeaderActions(): array
+    {
+        return [
+
+            FilamentExportHeaderAction::make('Export'),
+
         ];
     }
 }

@@ -17,13 +17,14 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\InfoResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\InfoResource\RelationManagers;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 
 class InfoResource extends Resource
 {
     protected static ?string $model = Info::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-information-circle';
-    
+
     protected static ?string $navigationGroup = 'Frontend';
     protected static ?int $navigationSort = 1;
 
@@ -99,6 +100,7 @@ class InfoResource extends Resource
             ])
             ->bulkActions([
                 // Tables\Actions\DeleteBulkAction::make(),
+                FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
 

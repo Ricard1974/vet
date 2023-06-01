@@ -7,6 +7,7 @@ use App\Filament\Resources\TipoResource;
 use Filament\Resources\Pages\ListRecords;
 use Konnco\FilamentImport\Actions\ImportField;
 use Konnco\FilamentImport\Actions\ImportAction;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class ListTipos extends ListRecords
 {
@@ -24,6 +25,14 @@ class ListTipos extends ListRecords
                         ->label('Nombre')
                         ->required(),
                 ])
+        ];
+    }
+    protected function getTableHeaderActions(): array
+    {
+        return [
+
+            FilamentExportHeaderAction::make('Export'),
+
         ];
     }
 }

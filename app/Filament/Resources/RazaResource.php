@@ -17,6 +17,7 @@ use App\Filament\Resources\RazaResource\RelationManagers;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 
 class RazaResource extends Resource
 {
@@ -59,7 +60,7 @@ class RazaResource extends Resource
             ])
             ->bulkActions([
             // Tables\Actions\DeleteBulkAction::make(),
-                ExportBulkAction::make()->label('Exportar'),
+            FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
 

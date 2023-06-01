@@ -16,6 +16,7 @@ use App\Filament\Resources\OwnerResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use App\Filament\Resources\OwnerResource\RelationManagers;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 
 class OwnerResource extends Resource
 {
@@ -96,8 +97,8 @@ class OwnerResource extends Resource
             ]),
             ])
             ->bulkActions([
-                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
-                ExportBulkAction::make()->label('Exportar'),
+            // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+            FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
     

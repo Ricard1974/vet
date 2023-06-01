@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\GaleriaResource\RelationManagers;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 
 class GaleriaResource extends Resource
 {
@@ -53,9 +54,9 @@ class GaleriaResource extends Resource
     {
         return $table
             ->columns([
-            TextColumn::make('nombre')->sortable()->label('Título de la imagen')->searchable(),
-            SpatieMediaLibraryImageColumn::make('image')->label('Imagen')->collection('galeria'),
-            ToggleColumn::make('is_published')
+                TextColumn::make('nombre')->sortable()->label('Título de la imagen')->searchable(),
+                SpatieMediaLibraryImageColumn::make('image')->label('Imagen')->collection('galeria'),
+                ToggleColumn::make('is_published')
             ])
             ->filters([
                 //
@@ -65,6 +66,7 @@ class GaleriaResource extends Resource
             ])
             ->bulkActions([
                 // Tables\Actions\DeleteBulkAction::make(),
+                FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
 

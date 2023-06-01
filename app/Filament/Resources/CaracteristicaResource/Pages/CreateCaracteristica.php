@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\CaracteristicaResource\Pages;
 
-use App\Filament\Resources\CaracteristicaResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use App\Filament\Resources\CaracteristicaResource;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class CreateCaracteristica extends CreateRecord
 {
@@ -14,4 +15,5 @@ class CreateCaracteristica extends CreateRecord
     {
         return $this->previousUrl ?? $this->getResource()::getUrl('index');
     }
+ 
 }

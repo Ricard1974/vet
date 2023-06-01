@@ -19,6 +19,7 @@ use App\Filament\Resources\CategoryResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use App\Filament\Resources\CategoryResource\RelationManagers;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 use App\Filament\Resources\CategoryResource\RelationManagers\PostsRelationManager;
 
 class CategoryResource extends Resource
@@ -63,16 +64,14 @@ class CategoryResource extends Resource
                 Tables\Actions\DeleteAction::make()->requiresConfirmation(),
             ])
             ->bulkActions([
-            // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
-                ExportBulkAction::make()->label('Exportar'),
+                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+                FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
 
     public static function getRelations(): array
     {
-        return [
-
-        ];
+        return [];
     }
 
     public static function getPages(): array

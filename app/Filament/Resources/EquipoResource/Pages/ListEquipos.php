@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\EquipoResource\Pages;
 
-use App\Filament\Resources\EquipoResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\EquipoResource;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class ListEquipos extends ListRecords
 {
@@ -14,6 +15,14 @@ class ListEquipos extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+        ];
+    }
+    protected function getTableHeaderActions(): array
+    {
+        return [
+
+            FilamentExportHeaderAction::make('Export'),
+
         ];
     }
 }

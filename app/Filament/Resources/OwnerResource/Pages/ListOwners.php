@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\OwnerResource\Pages;
 
-use App\Filament\Resources\OwnerResource;
 use Filament\Pages\Actions;
+use App\Filament\Resources\OwnerResource;
 use Filament\Resources\Pages\ListRecords;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class ListOwners extends ListRecords
 {
@@ -14,6 +15,14 @@ class ListOwners extends ListRecords
     {
         return [
             Actions\CreateAction::make()->label('Crear Propietario'),
+        ];
+    }
+    protected function getTableHeaderActions(): array
+    {
+        return [
+
+            FilamentExportHeaderAction::make('Export'),
+
         ];
     }
 }

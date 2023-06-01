@@ -7,6 +7,7 @@ use Filament\Resources\Pages\ListRecords;
 use Konnco\FilamentImport\Actions\ImportField;
 use Konnco\FilamentImport\Actions\ImportAction;
 use App\Filament\Resources\CaracteristicaResource;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class ListCaracteristicas extends ListRecords
 {
@@ -16,9 +17,6 @@ class ListCaracteristicas extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
-
-
-
             ImportAction::make()
                 ->massCreate(false)
                 ->handleBlankRows(true)
@@ -46,6 +44,15 @@ class ListCaracteristicas extends ListRecords
                     ImportField::make('notas_adicionales')
                         ->label('notas_adicionales'),
                 ], columns: 2)
+        ];
+    }
+
+    protected function getTableHeaderActions(): array
+    {
+        return [
+
+            FilamentExportHeaderAction::make('Export'),
+
         ];
     }
 }

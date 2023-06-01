@@ -7,6 +7,7 @@ use App\Filament\Resources\RazaResource;
 use Filament\Resources\Pages\ListRecords;
 use Konnco\FilamentImport\Actions\ImportField;
 use Konnco\FilamentImport\Actions\ImportAction;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class ListRazas extends ListRecords
 {
@@ -27,6 +28,14 @@ class ListRazas extends ListRecords
                         ->label('Nombre')
                         ->required(),
                     ])
+        ];
+    }
+    protected function getTableHeaderActions(): array
+    {
+        return [
+
+            FilamentExportHeaderAction::make('Export'),
+
         ];
     }
 }

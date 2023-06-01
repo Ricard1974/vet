@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\ProveedorResource\Pages;
 
-use App\Filament\Resources\ProveedorResource;
-use App\Filament\Resources\ProveedorResource\Widgets\ProveedorStatsOverview;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\ProveedorResource;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
+use App\Filament\Resources\ProveedorResource\Widgets\ProveedorStatsOverview;
 
 class ListProveedors extends ListRecords
 {
@@ -21,6 +22,14 @@ class ListProveedors extends ListRecords
     {
         return[
            ProveedorStatsOverview::class, 
+        ];
+    }
+    protected function getTableHeaderActions(): array
+    {
+        return [
+
+            FilamentExportHeaderAction::make('Export'),
+
         ];
     }
 }

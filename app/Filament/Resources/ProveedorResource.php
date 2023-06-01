@@ -23,6 +23,7 @@ use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\ProveedorResource\RelationManagers;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 use App\Filament\Resources\ProveedorResource\Widgets\ProveedorStatsOverview;
 
 class ProveedorResource extends Resource
@@ -143,8 +144,8 @@ class ProveedorResource extends Resource
 
             ])
             ->bulkActions([
-                // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
-                ExportBulkAction::make()->label('Exportar'),
+            // Tables\Actions\DeleteBulkAction::make()->requiresConfirmation(),
+            FilamentExportBulkAction::make('export')->label('Exportar'),
 
 
             ]);

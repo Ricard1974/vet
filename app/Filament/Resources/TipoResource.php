@@ -13,6 +13,7 @@ use App\Filament\Resources\TipoResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TipoResource\RelationManagers;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 
 class TipoResource extends Resource
 {
@@ -48,7 +49,7 @@ class TipoResource extends Resource
             ])
             ->bulkActions([
             Tables\Actions\DeleteBulkAction::make(),
-                ExportBulkAction::make()->label('Exportar'),
+            FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
     

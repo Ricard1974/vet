@@ -17,6 +17,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\CaracteristicaResource\Pages;
 use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 use App\Filament\Resources\CaracteristicaResource\RelationManagers;
 
 class CaracteristicaResource extends Resource
@@ -97,7 +99,7 @@ class CaracteristicaResource extends Resource
             ])
             ->bulkActions([
                 // Tables\Actions\DeleteBulkAction::make(),
-                ExportBulkAction::make()->label('Exportar'),
+                FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
 

@@ -19,6 +19,7 @@ use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\EquipoResource\RelationManagers;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction;
 
 class EquipoResource extends Resource
 {
@@ -75,18 +76,19 @@ class EquipoResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+        
             ->columns([
                 TextColumn::make('posicion')->searchable()->sortable(),
                 TextColumn::make('nombre')->searchable()->sortable(),
                 TextColumn::make('apellido')->label('Apellido')->searchable()->sortable(),
-                TextColumn::make('direccion')->searchable(),
-                TextColumn::make('ciudad'),
-                TextColumn::make('pc')->limit(10),
-                TextColumn::make('telefono'),
-                TextColumn::make('email'),
-                TextColumn::make('banco'),
-                TextColumn::make('notas'),
-            SpatieMediaLibraryImageColumn::make('image')->label('Thumbnail')->collection('equipo'),
+                TextColumn::make('direccion')->searchable()->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('ciudad')->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('pc')->limit(10)->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('telefono')->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('email')->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('banco')->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('notas')->toggleable(isToggledHiddenByDefault: true),
+                SpatieMediaLibraryImageColumn::make('image')->label('Thumbnail')->collection('equipo'),
 
             ])
             ->filters([
@@ -101,7 +103,8 @@ class EquipoResource extends Resource
             ])
             ->bulkActions([
             // Tables\Actions\DeleteBulkAction::make(),
-            ExportBulkAction::make()->label('Exportar'),
+            // ExportBulkAction::make()->label('Exportar'),
+            FilamentExportBulkAction::make('export')->label('Exportar'),
             ]);
     }
 
