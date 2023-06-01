@@ -78,8 +78,8 @@ class CaracteristicaResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('tipo.nombre')->toggleable(),
-                TextColumn::make('raza.nombre')->toggleable(),
-                TextColumn::make('origen')->toggleable(),
+                TextColumn::make('raza.nombre')->toggleable()->searchable(),
+                TextColumn::make('origen')->toggleable()->searchable(),
                 TextColumn::make('color')->toggleable(),
                 TextColumn::make('tamano')->toggleable(),
                 TextColumn::make('apariencia_fisica')->toggleable(isToggledHiddenByDefault: true),
@@ -99,7 +99,7 @@ class CaracteristicaResource extends Resource
             ])
             ->bulkActions([
                 // Tables\Actions\DeleteBulkAction::make(),
-                FilamentExportBulkAction::make('export')->label('Exportar'),
+                FilamentExportBulkAction::make('export')->label('Exportar')->defaultFormat('pdf'),
             ]);
     }
 
